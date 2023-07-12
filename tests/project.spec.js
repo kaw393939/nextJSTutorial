@@ -1,129 +1,83 @@
-// @ts-check
 const { test, expect } = require('@playwright/test');
-
-const resumeURL = 'http://localhost:3000'; // Replace with the URL of the student's resume page
-
-/* This test checks that the profile name (h2) is visible on the page */
-test('Check Profile Name', async ({ page }) => {
-  await page.goto(resumeURL);
-  await expect(page.locator('.sidebar h2')).toBeVisible();
+const nextjstest = 'http://localhost:3000'; // Replace with the URL of the student's resume page
+const nextjstestssr = 'http://localhost:3000/posts/ssg-ssr'
+const nextjsrender = 'http://localhost:3000/posts/pre-rendering'
+/* This test checks if `Blog` is present in the header */
+test('Check Header for `name`', async ({ page }) => {
+  await page.goto(nextjstest);
+  const headerText = await page.textContent('h2');
+  await expect(headerText).toContain('Blog');
 });
 
-/* This test checks that the profile image is visible on the page */
-test('Check Profile Image', async ({ page }) => {
-  await page.goto(resumeURL);
-  await expect(page.locator('.portrait img')).toBeVisible();
+/* This test checks if a yourname is present */
+test('Check Constant Presence', async () => {
+  const name = 'Yourname';
+  expect(name).toBeDefined();
 });
 
-/* This test checks that the job title is visible on the page */
-test('Check Job Title', async ({ page }) => {
-  await page.goto(resumeURL);
-  await expect(page.locator('.sidebar h3')).toBeVisible();
+test('Check Header for Your Name on SSR page', async ({ page }) => {
+  await page.goto(nextjstestssr);
+
+  const name = 'Yourname';
+  const headerSelector = `header h2:has-text("${name}")`;
+  await expect(page.locator(headerSelector)).toBeVisible();
 });
 
-/* This test checks that the social links are visible on the page */
-test('Check Social Links', async ({ page }) => {
-  await page.goto(resumeURL);
-  const linksCount = await page.locator('.links a').count();
-  await expect(linksCount).toBeGreaterThan(0);
+/* This test checks if the <h1> in the <article> contains specific content */
+test('Check <h1> in <article> for Specific Content on SSR page', async ({ page }) => {
+  await page.goto(nextjstestssr);
+
+  const articleSelector = 'article';
+  const expectedContent = 'When to Use Static Generation v.s. Server-side Rendering';
+  const headerSelector = `${articleSelector} h1:has-text("${expectedContent}")`;
+
+  await expect(page.locator(headerSelector)).toBeVisible();
+});
+test('Check Header for Your Name on Render Page', async ({ page }) => {
+  await page.goto(nextjsrender);
+
+  const name = 'Yourname';
+  const headerSelector = `header h2:has-text("${name}")`;
+  await expect(page.locator(headerSelector)).toBeVisible();
 });
 
-/* This test checks that the Objective section is visible on the page */
-test('Check Objective Section', async ({ page }) => {
-  await page.goto(resumeURL);
-  await expect(page.locator('.sidebar-bottom h4')).toBeVisible();
-});
+/* This test checks if the <h1> in the <article> contains specific content */
+test('Check <h1> in <article> for Specific Content on Render Page', async ({ page }) => {
+  await page.goto(nextjsrender);
 
-/* This test checks that the Skills section is visible on the page */
-test('Check Skills Section', async ({ page }) => {
-  await page.goto(resumeURL);
-  await expect(page.locator('.skills-section h2')).toBeVisible();
-});
+  const articleSelector = 'article';
+  const expectedContent = 'Two Forms of Pre-rendering';
+  const headerSelector = `${articleSelector} h1:has-text("${expectedContent}")`;
 
-/* This test checks that the Experience section is visible on the page */
-test('Check Experience Section', async ({ page }) => {
-  await page.goto(resumeURL);
-  await expect(page.locator('.experience-section h2')).toBeVisible();
+  await expect(page.locator(headerSelector)).toBeVisible();
 });
-
-/* This test checks that the Education section is visible on the page */
-test('Check Education Section', async ({ page }) => {
-  await page.goto(resumeURL);
-  await expect(page.locator('.education-section h2')).toBeVisible();
-});
-
-/* This test checks that the page title is not empty */
-test('Check Page Title', async ({ page }) => {
-  await page.goto(resumeURL);
-  const title = await page.title();
-  await expect(title).not.toBe('');
-});
-
-/* This test checks that the meta description for SEO is not empty */
-test('Check SEO Meta Description', async ({ page }) => {
-  await page.goto(resumeURL);
-  const metaDescription = await page.getAttribute('meta[name="description"]', 'content');
-  await expect(metaDescription).not.toBe('');
-});
-
-/* This test checks that the meta keywords for SEO are not empty */
-test('Check SEO Meta Keywords', async ({ page }) => {
-  await page.goto(resumeURL);
-  const metaKeywords = await page.getAttribute('meta[name="keywords"]', 'content');
-  await expect(metaKeywords).not.toBe('');
-});
-/* This test checks that the main content area is present on the page */
-test('Check Main Content Area', async ({ page }) => {
-  await page.goto(resumeURL);
-  await expect(page.locator('body > .container > .main-content')).toBeVisible();
-});
-
-/* This test checks that the sidebar area is present on the page */
-test('Check Sidebar Area', async ({ page }) => {
-  await page.goto(resumeURL);
-  await expect(page.locator('body > .container > aside.sidebar')).toBeVisible();
-});
-
-/* This test checks that the tagline heading (h1) is visible on the page */
-test('Check Tagline Heading', async ({ page }) => {
-  await page.goto(resumeURL);
-  await expect(page.locator('header h1')).toBeVisible();
-});
-
-/* This test checks that the skills icons are present on the page */
-test('Check Skills Icons', async ({ page }) => {
-  await page.goto(resumeURL);
-  const skillsIconsCount = await page.locator('.skill-list li i').count();
-  await expect(skillsIconsCount).toBeGreaterThan(0);
-});
-
-/* This test checks that the experience company and role are visible on the page */
-test('Check Experience Role and Company', async ({ page }) => {
-  await page.goto(resumeURL);
-  await expect(page.locator('.experience-section h3')).toBeVisible();
-});
-
-/* This test checks that the experience duration is visible on the page */
-test('Check Experience Duration', async ({ page }) => {
-  await page.goto(resumeURL);
-  await expect(page.locator('.experience-section h4')).toBeVisible();
-});
-
-/* This test checks that the education degree and university are visible on the page */
-test('Check Education Degree and University', async ({ page }) => {
-  await page.goto(resumeURL);
-  await expect(page.locator('.education-section h3')).toBeVisible();
-});
-
-/* This test checks that the education duration is visible on the page */
-test('Check Education Duration', async ({ page }) => {
-  await page.goto(resumeURL);
-  await expect(page.locator('.education-section h4')).toBeVisible();
+/* This test checks that the responsive meta tag is present */
+test('Check Responsive Meta Tag', async ({ page }) => {
+  await page.goto(nextjsrender);
+  const viewportMeta = await page.getAttribute('meta[name="viewport"]', 'content');
+  await expect(viewportMeta).toBe('width=device-width');
 });
 
 /* This test checks that the responsive meta tag is present */
-test('Check Responsive Meta Tag', async ({ page }) => {
-  await page.goto(resumeURL);
+test('Check Responsive Meta Tag for Render', async ({ page }) => {
+  await page.goto(nextjstestssr);
   const viewportMeta = await page.getAttribute('meta[name="viewport"]', 'content');
-  await expect(viewportMeta).toBe('width=device-width, initial-scale=1');
+  await expect(viewportMeta).toBe('width=device-width');
+});
+
+/* This test checks for correct redirection on clicking an <a> element */
+test('Check Redirection on Click', async ({ page }) => {
+  await page.goto(nextjstestssr);
+
+  const expectedURL = 'http://localhost:3000/';
+
+  // Click the <a> element with the text "back to home"
+  await Promise.all([
+    page.waitForNavigation({ timeout: 10000 }), // Increased timeout to 10 seconds
+    page.click('a:has-text("back to home")', { timeout: 10000 }), // Increased timeout to 10 seconds
+  ]);
+
+  const currentURL = page.url();
+
+  expect(currentURL).toBe(expectedURL);
 });

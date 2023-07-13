@@ -2,6 +2,8 @@
 
 # Assignment Brief: Understanding React & Introduction to NextJS
 
+## Instructor Video Overview - [Here](https://youtu.be/Jg2v8MsqjOc)
+
 **Objective:** This assignment aims to acquaint you with React and NextJS, two integral tools used in modern web development.
 
 ## Part I - React

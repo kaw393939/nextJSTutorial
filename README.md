@@ -18,13 +18,19 @@ Overview link: [Understanding NextJS](https://www.youtube.com/watch?v=Sklc_fQBmc
 
 ## Part III - Practice
 
-After developing a conceptual understanding of React and NextJS, apply what you've learned in a practical exercise. For this part, you are required to complete a text-based tutorial. This tutorial will guide you through the steps, from understanding NextJS to deploying your app.
+After developing a conceptual understanding of React and NextJS, apply what you've learned in a practical exercise. For this part, you are required to complete a series of text-based tutorials. These tutorials will guide you through the steps to get a great handle on NextJS and the very basisc of React.  
 
-Tutorial link: [NextJS Tutorial](https://nextjs.org/learn/foundations/about-nextjs)
+You need to complete these tutorials outside of this project because they will instruct you to clone a new starting repository for each tutorial.  Once you complete the final tutorial put the code in the files that I have provided for you in this project and when you have successfully done this, run the Playwright tests and when they all pass submit to GitHub and enable the GitHub Pages Action.  I took the code out of the files in this project, but left the folders and files you need to add the code to.   You will have to add all of the code from the final project except for the package.json file, if you change this it will break the project grading.
 
-Although the graded assignment via PlayWright will be posted later, feel free to begin working through the tutorial in advance. Once the assignment details are up, you can then clone your work into the given format.
+**Complete The following Tutorials - They don't take long (10-20 minutes each on average):**
 
-In the following weeks, due to time constraints, detailed video instructions might not be available. Therefore, it is highly recommended to engage thoroughly with the text-based tutorial provided.
+- https://nextjs.org/learn/basics/create-nextjs-app
+- https://nextjs.org/learn/basics/navigate-between-pages
+- https://nextjs.org/learn/basics/assets-metadata-css
+- https://nextjs.org/learn/basics/data-fetching
+- https://nextjs.org/learn/basics/dynamic-routes
+- https://nextjs.org/learn/basics/api-routes
+- https://nextjs.org/learn/basics/deploying-nextjs-app
 
 # Submision Guidelines
 

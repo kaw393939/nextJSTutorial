@@ -12,6 +12,8 @@ Begin by gaining a deeper understanding of React, its origins, and its purpose. 
 
 Documentary link: [React: The Creation at Facebook](https://www.youtube.com/watch?v=8pDqJVdNa44&t=1s)
 
+[Introduction to React Foundations Course - You must complete this on your own, it will help you a lot.](https://nextjs.org/learn/react-foundations/rendering-ui)
+
 ## Part II - NextJS
 
 Moving on, familiarize yourself with NextJS. Despite being based on HTML, CSS, and JavaScript, NextJS is a powerful framework that has earned its place among the most popular and potent web application frameworks globally. Also known as server-side React, NextJS is an excellent stepping stone into the world of React. Don't let this intimidate you; instead, embrace the opportunity to explore its capabilities.

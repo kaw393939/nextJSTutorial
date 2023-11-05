@@ -12,11 +12,12 @@
 
 Begin by gaining a deeper understanding of React, its origins, and its purpose. A comprehensive documentary on the creation of React at Facebook has been made available to provide you valuable insights into React's inner workings and philosophy. This documentary is not just informative, but is also crucial to building your foundation in React.
 
-Documentary link: [React: The Creation at Facebook](https://www.youtube.com/watch?v=8pDqJVdNa44&t=1s)
+- Documentary link: [React: The Creation at Facebook](https://www.youtube.com/watch?v=8pDqJVdNa44&t=1s)
 
 
-[Introduction to Javascript for react intro by instrucor](https://youtu.be/IX64_YS4W38?si=jqfjOcB4vMFMuNqb)
-[Introduction to React Foundations Course - You must complete this on your own, it will help you a lot.](https://nextjs.org/learn/react-foundations/rendering-ui)
+- [Introduction to Javascript for react intro by instrucor](https://youtu.be/IX64_YS4W38?si=jqfjOcB4vMFMuNqb)
+
+- [Introduction to React Foundations Course - You must complete this on your own, it will help you a lot.](https://nextjs.org/learn/react-foundations/rendering-ui)
 
 ## Part II - NextJS
 

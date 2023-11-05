@@ -4,6 +4,8 @@
 
 ## Instructor Video Overview - [Here](https://youtu.be/Jg2v8MsqjOc)
 
+
+
 **Objective:** This assignment aims to acquaint you with React and NextJS, two integral tools used in modern web development.
 
 ## Part I - React
@@ -12,6 +14,8 @@ Begin by gaining a deeper understanding of React, its origins, and its purpose. 
 
 Documentary link: [React: The Creation at Facebook](https://www.youtube.com/watch?v=8pDqJVdNa44&t=1s)
 
+
+[Introduction to Javascript for react intro by instrucor](https://youtu.be/IX64_YS4W38?si=jqfjOcB4vMFMuNqb)
 [Introduction to React Foundations Course - You must complete this on your own, it will help you a lot.](https://nextjs.org/learn/react-foundations/rendering-ui)
 
 ## Part II - NextJS
